@@ -15,7 +15,7 @@ public class BoxSpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(timer>5f)
+        if (timer > 5f)
         {
             SpawnBox();
             timer = 0f;
@@ -25,6 +25,8 @@ public class BoxSpawner : MonoBehaviour
     void SpawnBox()
     {
         GameObject box = Instantiate(boxPF);
-        box.transform.position = new Vector3(Random.Range(0, 450), 70, Random.Range(0, 450));
+        box.transform.position = new Vector3(Random.Range(0, 450), 70, Random.Range(200, 450));
+        box.AddComponent<ColorSaver>();
+        box.transform.tag = "selectable";
     }
 }
