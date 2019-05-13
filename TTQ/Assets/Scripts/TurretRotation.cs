@@ -5,6 +5,7 @@ using UnityEngine;
 public class TurretRotation : MonoBehaviour
 {
     GameObject cannon;
+    [SerializeField] GameObject MissilePF;
     void Start()
     {
         cannon = transform.Find("Cannon").gameObject;
@@ -55,7 +56,7 @@ public class TurretRotation : MonoBehaviour
                     cannonFinalRot = cannon.transform.rotation.eulerAngles;
                     cannon.transform.rotation = Quaternion.Euler(cannonFirstRot);
                     finalRot.x = cannonFinalRot.x;
-                    
+                    LaunchMissile();
                 }
             }
             else
@@ -76,5 +77,12 @@ public class TurretRotation : MonoBehaviour
 
         transform.rotation = Quaternion.Slerp(Quaternion.Euler(firstRot), Quaternion.Euler(-finalRot), Mathf.PingPong(Time.time, 2) / 2);
         cannon.transform.rotation = Quaternion.Slerp(Quaternion.Euler(cannonFirstRot), Quaternion.Euler(cannonFinalRot), Mathf.PingPong(Time.time, 2) / 2);
+    }
+
+    void LaunchMissile()
+    {
+        GameObject m = Instantiate(MissilePF);
+        m.transform.position = cannon.transform.position;
+        m.transform.rotation = cannon.transform.rotation;
     }
 }

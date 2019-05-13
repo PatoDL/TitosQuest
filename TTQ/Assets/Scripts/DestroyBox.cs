@@ -10,7 +10,6 @@ public class DestroyBox : MonoBehaviour
     {
         GameObject ex = Instantiate(explosion);
         ex.transform.position = transform.position;
-        ex.transform.localScale = transform.localScale;
         for(int i=0;i<7;i++)
         {
             GameObject w = Instantiate(weapon);

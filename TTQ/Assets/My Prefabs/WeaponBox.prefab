@@ -121,5 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1531564c1ff543046a1bbaea64dc20ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
+  explosion: {fileID: 2650417205863573958, guid: 2e4df5eb3f3c9964cb9674c62bef1c23,
+    type: 3}
   weapon: {fileID: 1313338932302848, guid: 45a89e4c747f9274a9ef65e274de96a4, type: 3}
